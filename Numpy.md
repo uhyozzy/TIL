@@ -111,11 +111,40 @@ print(arr)
 
 ## 1-4) 특정 범위 값을 가지는 n차원 배열 생성하기 
 ```
+- 참고) 리스트의 경우 아래와 같이 범위를 가지는 값 생성 가능
+lst = list(range(0,9,2))
+print(lst)
+# [0, 2, 4, 6, 8]
+
+(1) arr = np.arange()
+ - 인자값으로 start, stop, step 값을 가짐
+ - stop 미만 값까지 ㅊㄹ력 됨 
+ - start 값은 생략가능 0부터 시작
+ - step 값도 생략가능 1씩 건너 뜀 
+
+arr = np.arange(3,13,3)
+print(arr)
+# [ 3  6  9 12]
+
+(2) np.linspace() : 갯수에 따른 균일한 간격의 원소를 출력해 줌 
+ - step 값 대신 num값 존재
+ - stop 값 포함하여 출력
+arr2 = np.linspace(0,100,11)
+print(arr2)
+# [  0.  10.  20.  30.  40.  50.  60.  70.  80.  90. 100.]
+
+
+(3) np.logspace() : 지정된 범위에서 균등한 간격으로 log scale만큼 원소를 출력
+ - 밑값 지정안할시 상용로그 형식으로 출력 
+arr=np.logspace(1, 10, 10, base=2) #base값은 로그의 '밑 값을 의미'
+print(arr)
+
 ```
 
 
 ## 1-5) 난수로 이루어진 n차원 배열 생성하기 
 ```
+
 ```
 
 
