@@ -214,6 +214,13 @@ print(arr)
 
 ## 1-6) 시드(Seed)값을 통한 난수 생성 제어 
 ```
+- seed : 난수 발생지점을 조절 가능 
+- 시작점이 같으면 항상 같은 난수 표본이 발생하게 됨 
+
+np.random.seed(1)
+arr = np.random.rand(10)
+print("난수발생 1\n", arr)
+
 ```
 
 
