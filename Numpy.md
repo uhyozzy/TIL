@@ -138,12 +138,76 @@ print(arr2)
  - 밑값 지정안할시 상용로그 형식으로 출력 
 arr=np.logspace(1, 10, 10, base=2) #base값은 로그의 '밑 값을 의미'
 print(arr)
-
+#[   2.    4.    8.   16.   32.   64.  128.  256.  512. 1024.]
 ```
 
 
-## 1-5) 난수로 이루어진 n차원 배열 생성하기 
+## 1-5) 난수(랜덤값)로 이루어진 n차원 배열 생성하기 
 ```
+- matplotlib 데이터를 시각화해서 보여줄 수 있는 라이브러리
+- 설치 안된 경우 설치하여 실행 (한줄 씩 실행)
+!pip install matplotlib
+import matplotlib.byplot as plt
+
+- numpy이 안에는 난수를 생성해줄 수 있는 module이 존재
+
+(1) np.random.normal(loc, scalce, size) : 인자값에 따른 난수 추출
+- loc=정규분포의 평균, scalce=정규분포의 표준편차, size=추출할 표본의 갯수
+arr = np.random.normal(0, 1, 10)
+print(arr)
+#
+[ 0.77384142  1.06027454 -0.60405194  0.22105283 -1.7829051   0.9041896
+ -0.3780954   0.62260221  0.91879765 -1.49566152]
+ 
+- 사이즈부분을 shpae으로도 표현 가능
+arr = np.random.normal(0, 1, (2,3))
+print(arr)
+#
+[[-0.45319076  0.65354101  0.80636819]
+ [-0.87195637  1.22914564 -0.4968285 ]]
+
++) 이때, 원소의 분포를 시각적으로 알아보고 싶다면? plt.hist 이용!
+arr = np.random.normal(0, 1, 1000)
+plt.hist(arr, bins=100) #bins: 난수를 몇개의 구간으로 나누어 보여줄지 구분
+plt.show()
+
+
+
+(2) np.random.rand() : 정규분포에서 0~1사이의 값중 균등한 비율로 표본을 추출하는 함수 
+- 인자는 표본 갯수 작성 
+arr = np.random.rand(1000)
+plt.hist(arr, bins=100)
+plt.show()
+
+
+
+(3) np.random.randn() : 정규분포에서 -1~1 사이의 값 중 균등한 비율로 표본을 추출하는 함수 
+- 인자는 표본 갯수 작성 
+arr = np.random.randㅜ(1000)
+plt.hist(arr, bins=100)
+plt.show()
+
+
+(4) np.random.randint() : 랜덤한 정수만 출력하는 함수
+- 인자 : low값, high값, size (로우값부터 하이값의 미만까지 사이즈의 갯수만큼 출력)
+- size에 shape입력 가능
+- 인자는 한 개 이상 작성해야함(한개 값은 하이값, 0~하이값 중 하나의 정수 반환)
+- plt.hist 이용 가능 
+arr = np.random.randint(low=1, high=5, size=10)
+print(arr)
+# [2 1 3 1 3 4 2 1 2 4]
+
+arr = np.random.randint(low=1, high=5, size=(3, 4))
+print(arr)
+#
+[[2 1 4 4]
+ [4 3 3 2]
+ [4 4 1 2]]
+ 
+ 
+arr = np.random.randint(5)
+print(arr)
+# 1
 
 ```
 
