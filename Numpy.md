@@ -405,25 +405,67 @@ print(arr1 % 2)
 ```
 
 ## 3-2) 배열의 연산2
+> 내적(dot product), 절댓값, 올림, 반올림, 버림
 ```
 
+(1) 내적(dot product) = 스칼라 곲, 점곲
+- 두 행렬을 곱했을 때 결과값이 스칼라 값이 나오는 연산 
 
+(1-1) 1차원 행렬 
+arr1 = np.array([2,3,4])
+arr2 = np.array([1,2,3])
 
+print(np.dot(arr1, arr2))
+# 20  ---> 2*1 + 3*2 + 4*2 (각각의 원소끼리의 곱의 합)
 
+(1-2) 2차원 행렬 
+< dot product 의 연산 과정 > : 벡터의shape에 따라 결과shape도 정해짐
+[[a, b]   [[e, f]       [[ae + bg, af + bh]   
+ [c, d]]   [g, h]]  =>   [ce + dg, cf + dh]]
 
+arr1 = np.array([[1,2],
+                 [4,5]])                 
+arr2 = np.array([[1,2],
+                 [0,3]])
+print(np.dot(arr1,arr2))
+#
+[[ 1  8]
+ [ 4 23]]
+ 
+(2) 절댓값
+arr1 = np. array([[1, -2],
+                  [-4, 5]])
+print(np.abs(arr1))
 
+#
+[[1 2]
+ [4 5]]
 
+(3) 올림
+arr1 = np. array([[1.932, -2.339],
+                  [-4.145, 5.206]])
+print(np.ceil(arr1))
+#
+[[ 2. -2.]
+ [-4.  6.]]
 
+(4) 내림
+print(np.floor(arr1))
+#
+[[ 1. -3.]
+ [-5.  5.]]
 
-
-
-
-
-
-
-
-
-
+(5) 반올림
+print(np.round(arr1))
+#
+[[ 2. -2.]
+ [-4.  5.]]
+ 
+(6) 버림 
+print(np.trunc(arr1))
+#
+[[ 1. -2.]
+ [-4.  5.]]
 
 ```
 
