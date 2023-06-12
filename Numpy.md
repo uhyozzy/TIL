@@ -530,26 +530,39 @@ print(arr.median(axis=1)) # [2, 1, 2]
 ```
 
 ## 3-4) 배열의 연산4
-> 
+> 비교 연산, 삼각함수 
 ```
+(1) 비교연산
+arr1 = np.array([[1, 2, 3]
+                 [4, 5, 6]])
+arr2 = np.array([[1, 0, 3]
+                 [4, -2, 9]])
+                 
+print(arr1 == arr2)
+#[[True False True]
+  [True False False]]
 
+print(arr1 > arr2)
+#[[False True False]
+  [True False True]]
+  
+print(np.array_equal(arr1, arr2))#arr1의 원소들과 arr2의 원소들이 같은지 비교 
+# False
 
+(2) 삼각함수
+arr = np.array([[1, 2, 3]
+                 [4, 5, 6]])
+#sin() : sin값 출력 
+print(np.sin(arr))
 
+#cos() : cos값 출력 
+print(np.cos(arr))
 
+#tan() : tan값 출력 
+print(np.tan(arr))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#pi : 파이 값 출력
+print(np.pi) #3.141592...
 
 ```
 
