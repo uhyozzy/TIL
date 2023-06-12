@@ -2,7 +2,7 @@
 
 # 1장. N차원 배열 생성
 ## 1-1) n차원 배열 생성하기 
-{
+```
 (1) 1차원 배열
 arr = np.array([1,2,3])
 print(arr)
@@ -24,7 +24,7 @@ arr2 = np.array([[1,2,3],[4,5,6]])
 print(arr1.shape, arr2.shape) # shape :(행,열)
 print(arr1.ndim, arr2.ndim)   # ndim : 차원
 print(arr1.size, arr2.size)   # size : 원소의 개수
-}
+```
 
 ## 1-2) n차원 배열의 데이터 타입 
 ```
