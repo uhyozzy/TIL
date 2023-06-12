@@ -952,8 +952,31 @@ print(arr3)
  
 ```
 # 6-3. 배열 분할
+> axis를 기준으로 배열을 나눔
 ```
+예) 2차원 배열
+arr = np.arange(1, 13).reshape(3, 4)
+print(arr)
+# [[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]] 
 
+(1) vsplit()
+- axis = 0을 기준으로 분할
+arr_vsplit = np.vsplit(arr, 3) #row값의 행,렬 갯수만큼만 분할 가능, 2개로 분할하면 에러 
+print(arr_vsplit) 
+# [array([[1, 2, 3, 4]]), array([[5, 6, 7, 8]]), array([[ 9, 10, 11, 12]])]
 
+(2) hsplit()
+- axis = 1을 기준으로 분할
+arr_hsplit = np.hsplit(arr, 2) #row값의 행,렬 갯수만큼만 분할 가능, 짝수개이므로 짝수로 분할가능
+print(arr_hsplit)
+# [array([[ 1,  2],
+       [ 5,  6],
+       [ 9, 10]]), array([[ 3,  4],
+       [ 7,  8],
+       [11, 12]])]
+       
+(3) 3차원 배열도 분할 가능 
 
 ```
