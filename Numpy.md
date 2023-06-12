@@ -820,10 +820,62 @@ print(arr.T)
 # 6장. N차원 배열의 병합 
 # 6-1. 배열에 원소 추가 및 삭제 
 ```
+(1) 원소 추가
+- python list
+arr = [1, 2, 3, 4, 5, 6, 7, 8]
+arr.insert(2, 50)
+print(arr)
+
+- 1차원 배열
+arr = np.arange(1, 9)
+arr = np.insert(arr, 2, 50) # 특정 위치(2번째 자리)에 원소들 추가 
+print(arr)
+# [ 1  2 50  3  4  5  6  7  8]
+
+- 2차원 배열
+arr = np.arange(1, 13).reshape(3, 4) #행렬변환 과정 추가 
+arr = np.insert(arr, 2, 50, axis=0)
+print(arr)
+#
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [50 50 50 50]
+ [ 9 10 11 12]]
+
+arr = np.arange(1, 13).reshape(3, 4)
+arr = np.insert(arr, 2, 50, axis=1)
+print(arr)
+# [[ 1  2 50  3  4]
+ [ 5  6 50  7  8]
+ [ 9 10 50 11 12]]
+ 
+arr = np.arange(1, 13).reshape(3, 4)
+arr = np.insert(arr, 2, 50) #axis 값을 주지 않으면 1차원 배열로 변형 후 출력
+print(arr)
+# [ 1  2 50  3  4  5  6  7  8  9 10 11 12]
 
 
+(2) 원소 삭제 
+- delete() : exis값을 기준으로 지정위치의 원소를 삭제하는 함수로  (axis 없을시 1차원 배열로 변형 후 출력)
+arr = np.arange(1, 13).reshape(3, 4)
+print(arr)
+# [[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+ 
+arr = np.delete(arr, 2, axis=1)
+print(arr)
+# [[ 1  2  4]
+ [ 5  6  8]
+ [ 9 10 12]]
+
+arr = np.delete(arr, 2) #axis 값이 없을때 
+print(arr)
+# [ 1  2  4  5  6  7  8  9 10 11 12]
 
 ```
+
+
 # 6-2. 배열 간의 병합  
 ```
 
