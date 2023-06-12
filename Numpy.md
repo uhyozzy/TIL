@@ -738,16 +738,55 @@ print(arr)
 # 5-3. 배열의 형태 변경3
 > expand_dims(), squeeze()
 ```
-arr = np. array([1,2])
-print(arr, arr.shpae)
+arr = np.array([1,2])
+print(arr, arr.shape)
+# [1 2] (2,)
 
 (1) expand_dims()
 - 입력한 exis값을 기준으로 차원을 추가하는 함수
 arr = np.expand_dims(arr, axis =0)
+pritnt(arr, arr.shape)
+# [[1 2]] (1, 2) --> row값을 기준으로 차원 추가 
 
+arr = np.expand_dims(arr, axis =1)
+pritnt(arr, arr.shape) 
+# [[1]
+ [2]] (2, 1)  --> columm값을 기준으로 차원 추가 
 
 (2) squeeze()
+- 배열의 축을 제거하여 한차원씩 차원을 축소하는 함수
+arr = np.array([[1,2]])
+print(arr, arr.shape, arr.ndim)
+# [[1 2]] (1, 2) 2
 
+arr = np.squeeze(arr, axis=0)
+print(arr, arr.shape, arr.ndim)
+# [1 2] (2,) 1
+
+- 3차원 제거 
+예시1)
+arr = np.array([[[1],
+                 [2],
+                 [3]]])
+print(arr, arr.shape, arr.ndim)
+#[[[1]
+  [2]
+  [3]]] (1, 3, 1) 3
+
+arr =np.squeeze(arr, axis=0) #--> x축 제거 
+print(arr, arr.shape, arr.ndim)
+#[[1]
+ [2]
+ [3]] (3, 1) 2
+
+예시2)
+arr = np.array([[[1, 2, 3]]])
+print(arr, arr.shape, arr.ndim)
+# [[[1 2 3]]] (1, 1, 3) 3
+
+arr =np.squeeze(arr, axis=1) #--> y축 제거 
+print(arr, arr.shape, arr.ndim)
+# [[1 2 3]] (1, 3) 2
 
 ```
 
