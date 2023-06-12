@@ -736,8 +736,17 @@ print(arr)
 ```
 
 # 5-3. 배열의 형태 변경3
+> expand_dims(), squeeze()
 ```
+arr = np. array([1,2])
+print(arr, arr.shpae)
 
+(1) expand_dims()
+- 입력한 exis값을 기준으로 차원을 추가하는 함수
+arr = np.expand_dims(arr, axis =0)
+
+
+(2) squeeze()
 
 
 ```
