@@ -877,10 +877,79 @@ print(arr)
 
 
 # 6-2. 배열 간의 병합  
+> 두 배열을 서로 합침
 ```
+(1) append()
+- 배열의 마지막 부분에 또 다른 배열을 추가하여 병합하는 함수
+arr1 = np.arange(1, 13).reshape(3, 4)
+arr2 = np.arange(13, 25).reshape(3, 4)
 
+print(arr1)
+print(arr2, end="\n\n")
+#
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+[[13 14 15 16]
+ [17 18 19 20]
+ [21 22 23 24]]
+ 
+ 
+v axis = 0
+arr3 = np.append(arr1, arr2, axis=0)
+print(arr2, end="\n\n")
+# [[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]
+ [13 14 15 16]
+ [17 18 19 20]
+ [21 22 23 24]]
+ 
+ v axis = 1
+arr3 = np.append(arr1, arr2, axis=1)
+print(arr3, end="\n\n")
+#[[ 1  2  3  4 13 14 15 16]
+ [ 5  6  7  8 17 18 19 20]
+ [ 9 10 11 12 21 22 23 24]]
 
+ v axis = None
+ arr3 = np.append(arr1, arr2)
+print(arr3, end="\n\n")
+ # [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24]
+ 
+(2) vstack()
+- axis = 0 기준으로 배열을 병합하는 함수
+arr1 = np.arange(1,7).reshape(2,3)
+arr2 = np.arange(7,13).reshape(2,3)
+arr3 = np.vstack((arr1, arr2))
 
+print(arr3)
+# [[ 1  2  3]
+ [ 4  5  6]
+ [ 7  8  9]
+ [10 11 12]]
+
+(3) hstack()
+- axis = 1 기준으로 배열을 병합하는 함수 
+arr1 = np.arange(1,7).reshape(2,3)
+arr2 = np.arange(7,13).reshape(2,3)
+arr3 = np.hstack((arr1, arr2))
+
+print(arr3)
+#[[ 1  2  3  7  8  9]
+ [ 4  5  6 10 11 12]]
+ 
+(4) concatenate
+arr1 = np.arange(1,7).reshape(2,3)
+arr2 = np.arange(7,13).reshape(2,3)
+arr3 = np.concatenate([arr1, arr2], axis=0)
+
+print(arr3) 
+#[[ 1  2  3]
+ [ 4  5  6]
+ [ 7  8  9]
+ [10 11 12]]
+ 
 ```
 # 6-3. 배열 분할
 ```
