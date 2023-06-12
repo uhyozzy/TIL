@@ -470,30 +470,67 @@ print(np.trunc(arr1))
 ```
 
 ## 3-3) 배열의 연산3
+> min / max / sum / mean / std / cumsum / median
 ```
+arr = np.array([[1, 2, 3], 
+                [0, 1, 4])
 
+(1) min : 원소중에 가장 작은 값 출력 
+print(np.min(arr)) #0
+print(arr.min()) #0
+print(arr.min(axis=0)) # [0, 1, 3] 열끼리 비교했을 때 가장 작은 값 출력
+print(arr.min(axis=1)) # [1, 0] 행끼리 비교했을 때 가장 작은 값 출력?
 
+(2) max : 원소들 중에 가장 큰 값 출력
+print(np.max(arr)) #4
+print(arr.max()) #4
+print(arr.min(axis=0)) # [1, 2, 4] 열끼리 비교했을 때 가장 큰 값 출력
+print(arr.min(axis=1)) # [3, 4] 행끼리 비교했을 때 가장 큰 값 출력
 
+(3) sum : 원소들의 합 출력
+print(np.sum(arr)) #11
+print(arr.sum()) #11
+print(arr.sum(axis=0)) #[1 3 7] 열끼리 더한 값 출력 
+print(arr.sum(axis=1)) #[6 5] 행끼리 더한 값 출력
 
+(4) mean : 원소들의 평균값 출력 
+print(np.mean(arr)) #1.83
+print(arr.mean()) #1.83
+print(arr.mean(axis=0)) # [0.5 1.5 3.5]
+print(arr.mean(axis=1)) # [2.      1. 6666667] 
 
+(5) std : 원소들의 표준편차 값(분산의 정도를 나타낸 수치)
+print(np.std(arr))
+print(arr.std())
+print(arr.std(axis=0))
+print(arr.std(axis=1))
 
+(6) cumsum : 누적합을 계산하는 함수 
+print(np.cumsum(arr)) #[1 3 6 6 7 11] 
+print(arr.cumsum())  #[1 3 6 6 7 11]  axis를 지정하지 않으면 1차원 배열로 출력
+print(arr.cumsum(axis=0))
+#
+[[1 2 3]
+ [1 3 7]]
+print(arr.cumsum(axis=1))
+#
+[[1 3 6]
+ [0 1 5]]
 
-
-
-
-
-
-
-
-
-
-
-
+(7) median : 중앙값을 출력하는 함수 (원소들을 대소적으로 정렬했을 때 가장 중앙에 있는 값 반환)
+arr = np.array([[1, 2, 3], 
+                [0, 1, 4],
+                [1, 5, 2])
+                
+print(np.median(arr)) # 1.5
+print(arr.median()) #
+print(arr.median(axis=0)) # [1, 2, 3]
+print(arr.median(axis=1)) # [2, 1, 2]
 
 ```
-
 
 ## 3-4) 배열의 연산4
+> 
 ```
 
 
