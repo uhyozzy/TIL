@@ -27,7 +27,7 @@ print(arr1.size, arr2.size)   # size : 원소의 개수
 ```
 
 ## 1-2) n차원 배열의 데이터 타입 
-```
+```python
 - 문자형 확인 방법
 arr = np.array([1,2,3], dtype=np.float) #dtype=np.형태 하게되면 문자형 확인 가능
 print(arr, arr.dtype) #[1. 2. 3.] float64
@@ -51,7 +51,7 @@ print(arr, arr.dtype) #[0. 1. 2. 3.] float32
 ```
 
 ## 1-3) 정해진 형식의 n차원 배열 생성하기  
-```
+```python
 (1) np.zeros() : 모든 원소들이 0으로 된 배열 생성
 
 arr = np.zeros([2,2]) # 대괄호 안에는 행렬 삽입
@@ -110,7 +110,7 @@ print(arr)
 
 
 ## 1-4) 특정 범위 값을 가지는 n차원 배열 생성하기 
-```
+```python
 - 참고) 리스트의 경우 아래와 같이 범위를 가지는 값 생성 가능
 lst = list(range(0,9,2))
 print(lst)
@@ -143,7 +143,7 @@ print(arr)
 
 
 ## 1-5) 난수(랜덤값)로 이루어진 n차원 배열 생성하기 
-```
+```python
 - matplotlib 데이터를 시각화해서 보여줄 수 있는 라이브러리
 - 설치 안된 경우 설치하여 실행 (한줄 씩 실행)
 !pip install matplotlib
@@ -213,7 +213,7 @@ print(arr)
 
 
 ## 1-6) 시드(Seed)값을 통한 난수 생성 제어 
-```
+```python
 - seed : 난수 발생지점을 조절 가능 
 - 시작점이 같으면 항상 같은 난수 표본이 발생하게 됨 
 
@@ -226,7 +226,7 @@ print("난수발생 1\n", arr)
 
 # 2장. n차원 배열의 인덱싱 
 ## 2-1) 배열의 index 접근하기 
-```
+```python
 - 인덱스에 접근한다: 배열의 몇번째 원소 값이 무엇인지, 특정한 배열의 값이 무엇인지 탐색하는 과정
 
 (1) 1차원 배열 인덱싱
@@ -298,7 +298,7 @@ print(arr[:2, 2:])
 
 
 ## 2-2) Fancy 인덱싱 
-```
+```python
 - Fancy 인덱싱 : 특정 인덱싱을 여러개 선택해서 배열하는 방법
 - 방법 : print시 대괄호 두번 중첩하여 작성
 
@@ -322,7 +322,7 @@ print(arr[[0,2], 2:])  # 처음 값이나 끝값이 없을 때는 ':' 표시 사
 
 
 ## 2-3) Boolean 인덱싱 
-```
+```python
 - Boolean 인덱싱 : True와 False값을 이용해 배열의 값을 탐색하는 인덱싱
 - True에 해당하는 값은 가져오고 False에 해당하는 값은 가져오지 않음
 
@@ -341,7 +341,7 @@ print(arr[[True, False], True])
 ```
 
 ## 2-4) 조건연산자를 이용하여 인덱싱
-```
+```python
 arr = np.array([[1,2,3,4],
                 [5,6,7,8]])
                 
@@ -354,7 +354,7 @@ print(arr[arr >6])
 # 3장. N차원 배열연산법
 ## 3-1) 배열의 연산1
 > 사칙연산, 제곱, 제곱근, 몫, 나머지
-```
+```python
 - 넘파이에서는 파이썬 기본 연산자를 행렬이나 텐서 간에 연산가능 하도록 모듈안에 정의가 되어 있음 
 arr1 = np.array([[1,2,3],
                  [4,5,6],
@@ -406,7 +406,7 @@ print(arr1 % 2)
 
 ## 3-2) 배열의 연산2
 > 내적(dot product), 절댓값, 올림, 반올림, 버림
-```
+```python
 
 (1) 내적(dot product) = 스칼라 곲, 점곲
 - 두 행렬을 곱했을 때 결과값이 스칼라 값이 나오는 연산 
@@ -471,7 +471,7 @@ print(np.trunc(arr1))
 
 ## 3-3) 배열의 연산3
 > min / max / sum / mean / std / cumsum / median
-```
+```python
 arr = np.array([[1, 2, 3], 
                 [0, 1, 4])
 
@@ -531,7 +531,7 @@ print(arr.median(axis=1)) # [2, 1, 2]
 
 ## 3-4) 배열의 연산4
 > 비교 연산, 삼각함수 
-```
+```python
 (1) 비교연산
 arr1 = np.array([[1, 2, 3]
                  [4, 5, 6]])
@@ -570,7 +570,7 @@ print(np.pi) #3.141592...
 ## 3-5) 브로드캐스팅(Broadcasting)
 > 배열들의 shape이 다를 때 사용하는 방법 
 > 서로다른 행렬은 상대의 shape에 맞춰 확장을 하게 됨 
-```
+```python
 예시1)
 arr1 = np.array([[0, 0, 0],
                  [1, 1, 1],
@@ -598,7 +598,7 @@ print(arr1 + arr2)
 # 4장. N차원 배열 정렬
 ## 4-1. 1차원 배열의 정렬
 > 정렬 : 오름차순이나 내림차순으로 원소를 나열하는 과정
-```
+```python
 * 1차원 배열 생성 
 arr = np.random.randint(10, size = 10)
 print(arr)
@@ -622,7 +622,7 @@ print(arr)
 ```
 
 ## 4-2. 2차원 배열의 정렬
-```
+```python
 * 2차원 배열 생성
 arr = np.random.randint(15, size =(3, 4)
 print(arr)
@@ -671,7 +671,7 @@ print(np.argsort(arr, axix=1))
 # 5장. N차원 배열의 형태 변경
 # 5-1. 배열의 형태 변경1
 > reshape()
-```
+```python
 (1) 배열의 차원 변경 
 - 원래는 1차원
 arr = np.arange(12)
@@ -712,7 +712,7 @@ print(arr, arr.ndim)
 
 # 5-2. 배열의 형태 변경2
 > resize(), ravel()
-```
+```python
 (1) resize()
 - resize함수는 reshape함수와 동일하지만 원본 데이터를 변경시킨다는 차이점이 있음
 - resize함수에서 변경할 shape을 지정해줘야 함 
@@ -737,7 +737,7 @@ print(arr)
 
 # 5-3. 배열의 형태 변경3
 > expand_dims(), squeeze()
-```
+```python
 arr = np.array([1,2])
 print(arr, arr.shape)
 # [1 2] (2,)
@@ -791,7 +791,7 @@ print(arr, arr.shape, arr.ndim)
 ```
 
 # 5-4. 전치행렬(Transpose Matrix)
-```
+```python
 - 전치행렬 : (x, y) 값을 (y, x) 값으로 바꾸는 행렬, 대각선을 기준으로 바뀐다고 생각
 arr = np.array([[1, 2],
                 [3, 4]])
@@ -819,7 +819,7 @@ print(arr.T)
 
 # 6장. N차원 배열의 병합 
 # 6-1. 배열에 원소 추가 및 삭제 
-```
+```python
 (1) 원소 추가
 - python list
 arr = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -878,7 +878,7 @@ print(arr)
 
 # 6-2. 배열 간의 병합  
 > 두 배열을 서로 합침
-```
+```python
 (1) append()
 - 배열의 마지막 부분에 또 다른 배열을 추가하여 병합하는 함수
 arr1 = np.arange(1, 13).reshape(3, 4)
@@ -953,7 +953,7 @@ print(arr3)
 ```
 # 6-3. 배열 분할
 > axis를 기준으로 배열을 나눔
-```
+```python
 예) 2차원 배열
 arr = np.arange(1, 13).reshape(3, 4)
 print(arr)
