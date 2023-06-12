@@ -597,7 +597,27 @@ print(arr1 + arr2)
 
 # 4장. N차원 배열 정렬
 ## 4-1. 1차원 배열의 정렬
+> 정렬 : 오름차순이나 내림차순으로 원소를 나열하는 과정
 ```
+arr = np.random.randint(10, size = 10)
+print(arr)
+#[5 0 4 9 1 3 7 6 0 8]
+
+(1) 오름차순 
+- 기본적으로는 오름차순 정렬 
+pritnt(np.sort(arr))
+
+(2) 내림차순
+print(np.sort(arr)[::-1])
+--> 단 원본 배열에는 값의 정렬이 유지되지 않음
+
+(3) 정렬된 값을 유지하는 방법
+arr = np.sort(arr)
+print(arr)
+
+arr.sort() -->재정의된 sort함수 이용 
+print(arr)
+
 ```
 
 ## 4-2. 2차원 배열의 정렬
