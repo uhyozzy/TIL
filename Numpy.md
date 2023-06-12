@@ -792,8 +792,28 @@ print(arr, arr.shape, arr.ndim)
 
 # 5-4. 전치행렬(Transpose Matrix)
 ```
-
-
+- 전치행렬 : (x, y) 값을 (y, x) 값으로 바꾸는 행렬, 대각선을 기준으로 바뀐다고 생각
+arr = np.array([[1, 2],
+                [3, 4]])
+print(arr.T)
+#[[1 3]
+ [2 4]]
+ 
+arr = np.array([[1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]])
+print(arr.T)
+#[[1 4 7]
+ [2 5 8]
+ [3 6 9]]
+ 
+ - 정방행렬(n*n)이 아닌 경우= n*m
+arr = np.array([[1, 2],
+                [3, 4],
+                [5, 6]])
+print(arr.T)
+#[[1 3 5]
+ [2 4 6]]
 
 ```
 
