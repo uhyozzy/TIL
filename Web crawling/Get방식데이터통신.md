@@ -1,5 +1,28 @@
 ## 1)
 ```python
+import urllib.request
+import urllib.parse
+
+url = "http://www.encar.com/"
+mem = urllib.request.urlopen(url)
+
+API = "https://api.ipify.org"
+
+values = {
+    'format':'json'
+}
+
+print('before param: {}'.format(values))
+params=urllib.parse.urlencode(values)
+print('after param: {}'.format(params))
+
+url = API + "?" + params
+
+data = urllib.request.urlopen(url).read()
+
+
+text = data.decode("utf-8")
+print('response : {}'.format(text))
 ```
 
 ## 2) RSS
