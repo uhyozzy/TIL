@@ -1,0 +1,23 @@
+import urllib.request as req
+
+img_url="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEyMDJfMjI2%2FMDAxNjM4NDI4NzAxNzQx.6_wwlfiGfOsBsmTOAgPmEl7OjJpOzLqyv9NnDHDlzDog.W4PReS6793xezpD7nF5XQsvHFPG5vgK9o6SyuzuAIDcg.PNG.p_yesom%2FKakaoTalk_20211201_172535041_12.png&type=sc960_832"
+html_url="https://google.com"
+
+save_path1="C:/Myexam/test1.jpg"
+save_path2="C:/Myexam/index.html"
+
+  
+try:
+    file1, header1 = req.urlretrieve(img_url,save_path1)
+    file2, header2 = req.urlretrieve(html_url, save_path2)
+except Exception as e:
+    print("Downlead failed.")
+    print(e)
+else:
+    print(header1)
+    print(header2)
+
+
+print("Filename1 {}".format(file1))
+print("Filename2 {}".format(file2))
+print()
