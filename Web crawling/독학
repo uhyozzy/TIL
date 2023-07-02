@@ -1,0 +1,21 @@
+>id: #
+
+> class: . 
+
+# 1. 네이버 뉴스제목&링크 크롤링
+```python
+import requests
+from bs4 import beautifulSoup
+
+response = requests.get("웹사이트 주소")
+html = response.text
+
+soup = BeautifulSoup(html, 'html.parser')
+links = soup.select("가져오려는 class 혹은 id") 
+print(links) #결과는 리스트로 출력
+
+for link in links:
+	title = link.text
+	url = link.attrs['href'] #href의 속성값을 가져옴
+	print(title, url)
+```
