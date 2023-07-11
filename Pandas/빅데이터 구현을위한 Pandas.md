@@ -84,3 +84,119 @@ np.arange(12).reshape(3,4)
 ```
 ```
 
+## 설정변경코드
+- from IPython.core.interactiveshell import InteractiveShell
+    InteractiveShell.ast_node_interactivity="all"
+- InteractiveShell.ast_node_interactivity:'all'|'last'|'last_expr'|'none'(기본값은 'last_expr')
+
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity="all"
+
+## 데이터 프레임 인덱서 : loc, iloc
+- Pandas는 numpy행렬과 같이 쉼표를 사용한(행 인덱스, 열 인덱스)형식의 2차원 인덱싱 지원
+- loc : 라벨값 기반의 2차원 인덱싱
+- iloc : 순서를 나타내는 정수 기반의 2차원 인덱싱
+
+
+import pandas as pd
+import numpy as np
+
+# 예제DF 생성
+# 10-21 범위의 숫자를 value로 갖는 3행 4열의 df
+
+df = pd.DataFrame(np.arange(10,22).reshape(3,4),
+                 index=['a','b','c'],
+                 columns=["A","B","C","D"])
+df
+
+# loc인덱서 사용 
+
+df.loc['a'] #a행의 모든 열 추출 (시리즈로 반환)
+
+df.loc['b':'c'] #여러행 추출
+df['b':'c']
+
+df.loc["b"] #시리즈 반환 
+df.loc[["b"]] #df 반환
+
+### boolean으로 row 선택하기
+
+df.A>15
+
+df.loc[df.A>15]
+
+# 불리언 시리즈를 반환하는 함수
+def sel_row(df):
+    return df.A>15
+
+sel_row(df)
+df.loc[sel_row(df)]
+
+### loc인덱서 슬라이싱 
+
+df2=pd.DataFrame(np.arange(10,26).reshape(4,4),
+                columns=['a','b','c','d'])
+df2
+
+df2.loc[1:2] #[초기인덱스값:마지막인덱스값]
+df2[1:2] #위치인덱싱 
+
+### loc인덱서 사용 요소 값 접근
+
+df2
+df2.loc[0,'a'] #0행, a열에 있는 값 반환
+
+df
+df.loc[['a','b']]['A'] #시리즈
+df.loc[['a','b'],'A'] #시리즈
+df.loc[['a','b'],['A']] #df
+
+### loc를 이용한 indexing정리 
+
+# a행의 모든 열 추출방법
+
+df.loc['a'] #a행 모든 열 추출, 시리즈 반환
+df.loc[['a']] #a행 모든 열 추출, df 반환
+df.loc['a',:] #a행 모든 열 추출, 시리즈 반환
+df.loc[['a'],:] #a행 모든 열 추출, df 반환
+
+# a행의 B,C열 추출 
+df.loc['a','B':'C'] #시리즈반환
+df.loc[['a']] #df 반환
+df.loc[['a'],'B':'C'] #df 반환
+df.loc['a',['B','C']] #시리즈 반환
+
+# B행부터 모든행의 A열추출
+df.loc['b':'A'] 
+df.loc['b':]['A']
+df.loc['b':][['A']]
+df.loc['b':,['A']]
+df.loc['b':,'A':'A']       
+
+# a,b행의 B,D열을 데이터프레임으로 반환
+df.loc['a':'b']
+df.loc[['a','b']]
+df.loc[['a','b']][['B','D']]
+
+df.loc[['a','b'],['B','D']]
+
+## iloc인덱서
+- 라벨(name)이 아닌 위치를 나타내는 정수 인덱스만 받음
+- 데이터프레임.iloc[행,열]
+
+df
+df.iloc[0,1]
+
+# 행과 열 모두 슬라이싱
+df.iloc[0:2,1:2]
+df.iloc[0:2,1] #시리즈 반환
+
+# 값을 df형태로 추출
+df.iloc[2:3,1:2]
+
+# 0행 데이터에서 끝에서 두번째 열부터 끝까지 반환
+df
+df.iloc[0:1,-2:] #df
+df.iloc[0,-2:] #시리즈
+
+df.iloc[[0,1],[1,2]]
