@@ -84,20 +84,24 @@ np.arange(12).reshape(3,4)
 ```
 ```
 
-## 설정변경코드
+## 3. loc, lioc
+
+```python
+설정변경코드
 - from IPython.core.interactiveshell import InteractiveShell
     InteractiveShell.ast_node_interactivity="all"
 - InteractiveShell.ast_node_interactivity:'all'|'last'|'last_expr'|'none'(기본값은 'last_expr')
 
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity="all"
+```
 
-## 데이터 프레임 인덱서 : loc, iloc
+### 데이터 프레임 인덱서 : loc, iloc
 - Pandas는 numpy행렬과 같이 쉼표를 사용한(행 인덱스, 열 인덱스)형식의 2차원 인덱싱 지원
 - loc : 라벨값 기반의 2차원 인덱싱
 - iloc : 순서를 나타내는 정수 기반의 2차원 인덱싱
 
-
+```python
 import pandas as pd
 import numpy as np
 
@@ -200,3 +204,4 @@ df.iloc[0:1,-2:] #df
 df.iloc[0,-2:] #시리즈
 
 df.iloc[[0,1],[1,2]]
+```
