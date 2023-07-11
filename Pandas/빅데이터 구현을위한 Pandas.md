@@ -204,4 +204,14 @@ df.iloc[0:1,-2:] #df
 df.iloc[0,-2:] #시리즈
 
 df.iloc[[0,1],[1,2]]
+
+
+# 예제생성
+df=pd.DataFrame({'num_legs':[2,4,4,6],
+                'num_wings':[2,0,0,0]},
+               index=['falcon','dog','cat','ant'])
+df
+
+df.num_legs
+df.num_legs.value_counts() #분류해서 동일한 값을 갖는 행을 count해줌
 ```
